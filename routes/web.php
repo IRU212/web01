@@ -3,6 +3,9 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use PhpParser\Node\Arg;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +28,17 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
+    return Inertia::render('Dashboard',[
+        'user' => Auth::user()
+    ]);
+
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+
+// Route::get('/', function () {
+//     return Inertia::render('Welcome',[
+//         'greeting' => 'Hello'
+//     ]);
+// });

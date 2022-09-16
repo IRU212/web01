@@ -29,15 +29,31 @@
             height: 40px;
         }
     }
+
+    .toggleHeader{
+        background-color: #fff;
+        border: 1.5px solid #ccc;
+        border-radius: 7px;
+        padding: 7px 11px;
+        line-height: 1.1rem;
+        color: #222;
+
+        .toggleHeaderName{
+            font-size: 1.1rem;
+            margin: 9px;
+        }
+    }
 }
 
 // icontoggleイベント
 .iconToggle{
     display: block;
     position: absolute;
-    top: 60px;
-    border: 1.5px solid #ccc;
-    padding: 5px 9px;
+    top: 65px;
+    right: 2%;
+    z-index: 999;
+    width: 300px;
+    text-align: left;
 }
 
 .iconToggleNone{
