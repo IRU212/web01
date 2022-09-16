@@ -1,0 +1,45 @@
+.header{
+    width: 100%;
+    height: 56px;
+    margin: 0;
+    padding: 0;
+    line-height: 56px;
+    color: aquamarine;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+
+    .iconback{
+        background-color: aqua;
+        border-radius: 50%;
+        margin: 7px 0 0 0;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        right: 5%;
+        display: flex;
+
+        &:hover{
+            cursor: pointer;
+        }
+
+        .icon{
+            border-radius: 50%;
+            border: 1px solid #222;
+            width: 40px;
+            height: 40px;
+        }
+    }
+}
+
+// icontoggleイベント
+.iconToggle{
+    display: block;
+    position: absolute;
+    top: 60px;
+    border: 1.5px solid #ccc;
+    padding: 5px 9px;
+}
+
+.iconToggleNone{
+    display: none;
+}
