@@ -39,8 +39,16 @@ function Header(props) {
                     <div className={styles.toggleHeader}>
                         <div className={styles.toggleHeaderName}>{ props.info.name }</div>
                         <div className={styles.toggleHeaderName}>{ props.info.email }</div>
-                        <div className={styles.toggleHeaderName}><a href="">投稿</a></div>
-                        <div className={styles.toggleHeaderName}><a href="">自分の作品</a></div>
+                        <div className={styles.toggleHeaderName}>
+                            <a href="contribution">
+                                投稿
+                            </a>
+                        </div>
+                        <div className={styles.toggleHeaderName}>
+                            <a href="myself">
+                                自分の作品
+                            </a>
+                        </div>
                         <div className={styles.toggleHeaderName}><a href="">いいね</a></div>
                         <div className={styles.toggleHeaderName}>                
                             <Link

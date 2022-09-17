@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\ContributionController;
 use App\Http\Controllers\IllustrationController;
+use App\Http\Controllers\MyselfController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +22,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/dashboard',[IllustrationController::class,'index']);
+
+// Route::get('/contribution',[IllustrationController::class,'index']);
+Route::get('/contribution',[ContributionController::class,'store']);
+Route::post('/contribution',[ContributionController::class,'store']);
+
+Route::get('/myself',[MyselfController::class,'index']);
+Route::get('/myself/{id}',[MyselfController::class,'show']);

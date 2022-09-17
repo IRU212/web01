@@ -1,0 +1,44 @@
+.flex{
+    width: auto;
+    margin: 50px 5%;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.item{
+    width: 250px;
+    height: 100%;
+    // background-color: rgb(214, 238, 238);
+    background-color: #fff;
+    margin: 20px auto 0 auto;
+    font-size: 1.1rem;
+    flex-wrap: wrap;
+
+    &:hover{
+        cursor: pointer;
+    }
+
+    .imgback{
+        width: 250px;
+        height: 140px;
+
+        .img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .title{
+        box-sizing: border-box;
+        border: 15px solid rgba($color: #000000, $alpha: 0);
+        text-align: center;
+    }
+}
+
+.myselfDetail{
+    width: auto;
+    position: relative;
+    margin: 60px 0 0 0;
+    padding: 0 8%;
+
+}

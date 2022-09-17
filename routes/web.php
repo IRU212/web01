@@ -31,8 +31,25 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard',[
         'user' => Auth::user()
     ]);
-
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/contribution', function () {
+    return Inertia::render('Contribution',[
+        'user' => Auth::user()
+    ]);
+})->middleware(['auth', 'verified'])->name('contribution');
+
+Route::get('/myself', function () {
+    return Inertia::render('Myself',[
+        'user' => Auth::user()
+    ]);
+})->middleware(['auth', 'verified'])->name('myself');
+
+Route::get('/myself/{id}', function () {
+    return Inertia::render('MyselfDetail',[
+        'user' => Auth::user()
+    ]);
+})->middleware(['auth', 'verified']);
 
 require __DIR__.'/auth.php';
 
