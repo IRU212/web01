@@ -45,7 +45,7 @@ function Header(props) {
                             </a>
                         </div>
                         <div className={styles.toggleHeaderName}>
-                            <a href="myself">
+                            <a href="http://127.0.0.1:8000/myself">
                                 自分の作品
                             </a>
                         </div>

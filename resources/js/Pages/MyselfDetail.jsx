@@ -1,35 +1,28 @@
-import axios from 'axios'
+import axios from 'axios';
 import React from 'react'
-import { useState } from 'react'
-import { useEffect } from 'react'
-import Header from './Header'
+import { useState } from 'react';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import { Link,BrowserRouter,Routes,Route } from 'react-router-dom'
 
 import styles from '../../scss/myself.module.scss'
 
-function MyselfDetail(props) {
+function MyselfDetail() {
+
+    const location = useLocation();
+    const { id } = location.state
+    const { title } = location.state
+    const { text } = location.state
+    const { image } = location.state
 
     const [datas,setData] = useState()
-    const [id,setId] = useState()
-    const [title,setTitle] = useState()
-    const [text,setText] = useState()
-    const [image,setImage] = useState()
 
-    const [dataid,setDataid] = useState()
-
-    console.log(window.location.href);
-
-    useEffect(() => {
+    useEffect(() =>{
         axios
-            .get("http://127.0.0.1:8000/api/myself/2")
-            .then((res) =>{
+            .get("http://127.0.0.1:8000/api/myself")
+            .then((res) => {
                 setData(res.data)
-                setId(res.data.myself.id)
-                setTitle(res.data.myself.title)
-                setText(res.data.myself.text)
-                setImage(res.data.myself.image)
-                setDataid(res.data.dataid)
-                console.log(res.data.myself)
-                console.log(res.data.dataid)
+                console.log(res.data)
             })
             .catch((res) => {
                 console.log(res.data)
@@ -38,15 +31,35 @@ function MyselfDetail(props) {
 
     return (
         <div>
-            <Header 
-                info={{ 
-                    id: props.user.id,
-                    name: props.user.name,
-                    email: props.user.email
-                }} 
-            />
             <div className={styles.myselfDetail}>
-                <img src={ image } alt="aaa" />
+                <div className={styles.myselfImg}>
+                    <img src={ image } alt="" className={styles.Img} />
+                </div>
+                <div className={styles.introduce}>
+                    <div className={styles.title}>
+                        { title }
+                    </div>
+                    <div className={styles.text}>
+                        { text }
+                    </div>
+                </div>
+            </div>
+            <div className={styles.recommendation}>
+                { datas?.map((data,index) =>
+                    <Link
+                        to={`../myself/${data.id}`} 
+                        state={{
+                            id: `${data.id}`,
+                            title: `${data.title}`,
+                            text: `${data.text}`,
+                            image: `${data.image}`,
+                        }}
+                    >
+                        <div key={index} className={styles.item}>
+                            <img src={ data.image } alt="aaa" className={styles.image} />
+                        </div>
+                    </Link>
+                ) }
             </div>
         </div>
     )

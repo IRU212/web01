@@ -45,11 +45,11 @@ Route::get('/myself', function () {
     ]);
 })->middleware(['auth', 'verified'])->name('myself');
 
-Route::get('/myself/{id}', function () {
-    return Inertia::render('MyselfDetail',[
-        'user' => Auth::user()
-    ]);
-})->middleware(['auth', 'verified']);
+// Route::get('/myself/{id}', function () {
+//     return Inertia::render('MyselfDetail',[
+//         'user' => Auth::user()
+//     ]);
+// })->middleware(['auth', 'verified']);
 
 require __DIR__.'/auth.php';
 

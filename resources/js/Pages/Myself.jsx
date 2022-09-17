@@ -6,13 +6,11 @@ import Header from './Header'
 
 import styles from '../../scss/myself.module.scss'
 import { Link,BrowserRouter,Routes,Route } from 'react-router-dom'
-import Test from './Test'
 import MyselfDetail from './MyselfDetail'
 
 function Myself(props) {
 
     const [datas,setData] = useState()
-    const [urlId,setUrlId] = useState() 
 
     useEffect(() => {
         axios
@@ -35,7 +33,7 @@ function Myself(props) {
                             to={`${data.id}`} 
                             state={{
                                 id: `${data.id}`,
-                                title: `${data.name}`,
+                                title: `${data.title}`,
                                 text: `${data.text}`,
                                 image: `${data.image}`,
                             }}
@@ -64,7 +62,7 @@ function Myself(props) {
                 <BrowserRouter>
                     <Routes>
                         <Route path='myself' element={<MyselfIndex />}  />
-                        <Route path='myself/:id' element={<Test />} />
+                        <Route path='myself/:id' element={<MyselfDetail />} />
                     </Routes>
                 </BrowserRouter>
             </div>
