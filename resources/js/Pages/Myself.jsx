@@ -24,7 +24,7 @@ function Myself(props) {
             })
     },[])
 
-    function MyselfIndex(props){
+    function MyselfIndex(){
         return(
             <div className={styles.flex}>
                 { datas?.map((data,index) =>

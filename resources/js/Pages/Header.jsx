@@ -1,3 +1,4 @@
+import Search from '@/content/Search';
 import { Link } from '@inertiajs/inertia-react';
 import axios from 'axios'
 import { useEffect } from 'react'
@@ -32,6 +33,8 @@ function Header(props) {
 
     return (
         <div className={styles.header}>
+            <a href="home" className={styles.home}>home</a>
+            <div className={styles.search}><Search /></div>
             <div className={styles.iconback}>
                 {/* <Image src={Icon} width={40} height={40} alt="icon" onClick={iconMenuToggle} className={styles.icon} /> */}
                 <img  onClick={iconMenuToggle} className={styles.icon}  src="https://pbs.twimg.com/media/EsU0QSaVEAEQSsC.png" alt="" />

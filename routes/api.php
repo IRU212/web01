@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContributionController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\IllustrationController;
 use App\Http\Controllers\MyselfController;
 use Illuminate\Http\Request;
@@ -21,7 +22,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/dashboard',[IllustrationController::class,'index']);
+// Route::get('/dashboard',[IllustrationController::class,'index']);
+Route::get('/home',[HomeController::class,'index']);
+
 
 // Route::get('/contribution',[IllustrationController::class,'index']);
 Route::get('/contribution',[ContributionController::class,'store']);

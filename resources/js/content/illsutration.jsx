@@ -1,6 +1,10 @@
-import React, { useState } from 'react'
+import IllsutrationListDetail from '@/Pages/IllsutrationListDetail'
+import MyselfDetail from '@/Pages/MyselfDetail'
+import React, { useEffect, useState } from 'react'
+import { Link,BrowserRouter,Routes,Route } from 'react-router-dom'
 
 import styles from '../../scss/content.module.scss'
+
 
 function Illsutration() {
 
@@ -10,76 +14,53 @@ function Illsutration() {
         setHeart(!heart)
     }
 
-  return (
-    <div className={styles.Illsutration}>
-        <div className={styles.itemList}>
-            <div className={styles.item}>
-                <img className={styles.itemImage} src="https://pbs.twimg.com/media/EsU0QSaVEAEQSsC.png" alt="image" />
-                <div className={`${ heart ? styles.heart : styles.heartRed }`} onClick={heartToggle}></div>
+    const [datas,setData] = useState()
+
+    useEffect(() => {
+        axios
+            .get("http://127.0.0.1:8000/api/home")
+            .then((res) => {
+                setData(res.data.contributions)
+                console.log(res.data.contributions)
+            })
+            .catch((res) => {
+                console.log(res)
+            })
+    },[])
+
+    function IllsutrationList(){
+
+        return(
+            <div className={styles.itemList}>
+                { datas?.map((data) =>
+                    <Link
+                        to={`../home/${data.id}`}
+                        state={{
+                            id: `${data.id}`,
+                            title: `${data.title}`,
+                            text: `${data.text}`,
+                            image: `${data.image}`,
+                        }}
+                        className={styles.item}
+                    >
+                    <img src={ data.image } className={styles.itemImage} alt="image" />
+                    <div className={`${ heart ? styles.heart : styles.heartRed }`} onClick={heartToggle}></div>
+                    </Link>
+                )}
             </div>
-            <div className={styles.item}>
-                <img className={styles.itemImage} src="https://s2.booth.pm/8e17bf87-f1d6-4be1-9947-51d39dd1a420/i/3893529/a9e07901-7da1-41f3-983c-c87adc9dd29d_base_resized.jpg" alt="image" />
-                <div class={styles.heartRed}></div>
-            </div>
-            <div className={styles.item}>
-                <img className={styles.itemImage} src="https://pbs.twimg.com/media/EsU0QSaVEAEQSsC.png" alt="image" />
-                <div class={styles.heart}></div>
-            </div>
-            <div className={styles.item}>
-                <img className={styles.itemImage} src="https://s2.booth.pm/8e17bf87-f1d6-4be1-9947-51d39dd1a420/i/3893529/a9e07901-7da1-41f3-983c-c87adc9dd29d_base_resized.jpg" alt="image" />
-                <div class={styles.heart}></div>
-            </div>
-            <div className={styles.item}>
-                <img className={styles.itemImage} src="https://pbs.twimg.com/media/EsU0QSaVEAEQSsC.png" alt="image" />
-                <div class={styles.heart}></div>
-            </div>
+        )
+    }
+
+    return (
+        <div className={styles.Illsutration}>
+            <BrowserRouter>
+                <Routes>
+                    <Route path='home' element={<IllsutrationList />} />
+                    <Route path='home/:id' element={<IllsutrationListDetail />} />
+                </Routes>
+            </BrowserRouter>
         </div>
-        <div className={styles.itemList}>
-            <div className={styles.item}>
-                <img className={styles.itemImage} src="https://pbs.twimg.com/media/EsU0QSaVEAEQSsC.png" alt="image" />
-                <div class={styles.heart}></div>
-            </div>
-            <div className={styles.item}>
-                <img className={styles.itemImage} src="https://s2.booth.pm/8e17bf87-f1d6-4be1-9947-51d39dd1a420/i/3893529/a9e07901-7da1-41f3-983c-c87adc9dd29d_base_resized.jpg" alt="image" />
-                <div class={styles.heart}></div>
-            </div>
-            <div className={styles.item}>
-                <img className={styles.itemImage} src="https://pbs.twimg.com/media/EsU0QSaVEAEQSsC.png" alt="image" />
-                <div class={styles.heart}></div>
-            </div>
-            <div className={styles.item}>
-                <img className={styles.itemImage} src="https://s2.booth.pm/8e17bf87-f1d6-4be1-9947-51d39dd1a420/i/3893529/a9e07901-7da1-41f3-983c-c87adc9dd29d_base_resized.jpg" alt="image" />
-                <div class={styles.heart}></div>
-            </div>
-            <div className={styles.item}>
-                <img className={styles.itemImage} src="https://pbs.twimg.com/media/EsU0QSaVEAEQSsC.png" alt="image" />
-                <div class={styles.heart}></div>
-            </div>
-        </div>
-        <div className={styles.itemList}>
-            <div className={styles.item}>
-                <img className={styles.itemImage} src="https://pbs.twimg.com/media/EsU0QSaVEAEQSsC.png" alt="image" />
-                <div class={styles.heart}></div>
-            </div>
-            <div className={styles.item}>
-                <img className={styles.itemImage} src="https://s2.booth.pm/8e17bf87-f1d6-4be1-9947-51d39dd1a420/i/3893529/a9e07901-7da1-41f3-983c-c87adc9dd29d_base_resized.jpg" alt="image" />
-                <div class={styles.heart}></div>
-            </div>
-            <div className={styles.item}>
-                <img className={styles.itemImage} src="https://pbs.twimg.com/media/EsU0QSaVEAEQSsC.png" alt="image" />
-                <div class={styles.heart}></div>
-            </div>
-            <div className={styles.item}>
-                <img className={styles.itemImage} src="https://s2.booth.pm/8e17bf87-f1d6-4be1-9947-51d39dd1a420/i/3893529/a9e07901-7da1-41f3-983c-c87adc9dd29d_base_resized.jpg" alt="image" />
-                <div class={styles.heart}></div>
-            </div>
-            <div className={styles.item}>
-                <img className={styles.itemImage} src="https://pbs.twimg.com/media/EsU0QSaVEAEQSsC.png" alt="image" />
-                <div class={styles.heart}></div>
-            </div>
-        </div>
-    </div>
-  )
+    )
 }
 
 export default Illsutration
