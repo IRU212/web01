@@ -23,11 +23,17 @@ function Myself(props) {
                 console.log(res)
             })
     },[])
+    
+    const results = datas?.filter(userlist => {
+        return userlist.user_id == props.user.id
+    })
+
+    console.log(results);
 
     function MyselfIndex(){
         return(
             <div className={styles.flex}>
-                { datas?.map((data,index) =>
+                { results?.map((data,index) =>
                     <div key={index} className={styles.item}>
                         <Link 
                             to={`${data.id}`} 

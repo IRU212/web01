@@ -13,7 +13,7 @@ export default function Dashboard(props) {
                     email: props.user.email
                 }} 
             />
-            {/* <Illsutration /> */}
+            <Illsutration />
         </div>
     );
 }

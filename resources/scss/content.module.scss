@@ -4,15 +4,16 @@
     text-align: center;
 
     .itemList{
-        margin: 40px 0 0 0;
+        margin: 50px 0 0 0;
         padding: 0 6%;
         display: flex;
+        flex-wrap: wrap;
 
         .item{
             width: 210px;
             height: 210px;
             background-color: antiquewhite;
-            margin: 0 auto;
+            margin: 30px auto;
             border-radius: 15px;
             position: relative;
 
@@ -99,4 +100,41 @@
             }
         }
     }
+}
+
+.search{
+    position: relative;
+    width: 330px;
+    margin: 0 0 0 6.5%;
+}
+
+.inputSearch{
+    height: 35px;
+    width: 330px;
+    border-radius: 20px;
+    padding-left: 40px;
+    background-image: url("https://thumb.ac-illust.com/66/66c2ed76ee24b45362979ae12a79cfd0_t.jpeg");
+    background-size: 28px;
+    background-repeat: no-repeat;
+    background-position: left 3px top 3px;
+}
+
+.result{
+    left: 4%;
+    width: 306px;
+    display: block;
+    position: absolute;
+    top: 43px;
+    z-index: 999;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px 0;
+}
+
+.resultNone{
+    display: none;
+}
+
+.resultFont{
+    margin: 10px 0;
 }

@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { Link,BrowserRouter,Routes,Route } from 'react-router-dom'
 
 import styles from '../../scss/content.module.scss'
+import Search from './Search'
 
 
 function Illsutration() {
@@ -31,22 +32,27 @@ function Illsutration() {
     function IllsutrationList(){
 
         return(
-            <div className={styles.itemList}>
-                { datas?.map((data) =>
-                    <Link
-                        to={`../home/${data.id}`}
-                        state={{
-                            id: `${data.id}`,
-                            title: `${data.title}`,
-                            text: `${data.text}`,
-                            image: `${data.image}`,
-                        }}
-                        className={styles.item}
-                    >
-                    <img src={ data.image } className={styles.itemImage} alt="image" />
-                    <div className={`${ heart ? styles.heart : styles.heartRed }`} onClick={heartToggle}></div>
-                    </Link>
-                )}
+            <div>
+                <div>
+                    <Search />
+                </div>
+                <div className={styles.itemList}>
+                    { datas?.map((data) =>
+                        <Link
+                            to={`../home/${data.id}`}
+                            state={{
+                                id: `${data.id}`,
+                                title: `${data.title}`,
+                                text: `${data.text}`,
+                                image: `${data.image}`,
+                            }}
+                            className={styles.item}
+                        >
+                        <img src={ data.image } className={styles.itemImage} alt="image" />
+                        <div className={`${ heart ? styles.heart : styles.heartRed }`} onClick={heartToggle}></div>
+                        </Link>
+                    )}
+                </div>
             </div>
         )
     }

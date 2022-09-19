@@ -17,13 +17,11 @@ function Header(props) {
         setIconMenu(!iconMenu)
     }
 
-    console.log(props.info.name)
-
     useEffect(() => {
         axios
             .get(illustrationURL)
             .then((res) => {
-                console.log(res.data)
+                // console.log(res.data)
             })
             .catch((res)=>{
                 console.log('エラーが発生しました')
@@ -34,7 +32,7 @@ function Header(props) {
     return (
         <div className={styles.header}>
             <a href="home" className={styles.home}>home</a>
-            <div className={styles.search}><Search /></div>
+            {/* <div className={styles.search}><Search /></div> */}
             <div className={styles.iconback}>
                 {/* <Image src={Icon} width={40} height={40} alt="icon" onClick={iconMenuToggle} className={styles.icon} /> */}
                 <img  onClick={iconMenuToggle} className={styles.icon}  src="https://pbs.twimg.com/media/EsU0QSaVEAEQSsC.png" alt="" />
