@@ -50,7 +50,7 @@ function Header(props) {
                                 自分の作品
                             </a>
                         </div>
-                        <div className={styles.toggleHeaderName}><a href="">いいね</a></div>
+                        {/* <div className={styles.toggleHeaderName}><a href="">いいね</a></div> */}
                         <div className={styles.toggleHeaderName}>                
                             <Link
                                 href={route('logout')}

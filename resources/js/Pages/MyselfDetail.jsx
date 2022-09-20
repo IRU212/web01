@@ -29,6 +29,21 @@ function MyselfDetail() {
             })
     },[])
 
+    const updateClick = () => {
+        console.log("クリックされました")
+        axios
+            .post(`api/myself/${id}/update`,{
+                title: "put",
+                text: "putTest"
+            })
+            .then((res) => {
+                setData(res.data)
+            })
+            .catch((res) => {
+                console.log(res.data)
+            })
+    }
+
     return (
         <div>
             <div className={styles.myselfDetail}>
@@ -44,7 +59,10 @@ function MyselfDetail() {
                     </div>
                 </div>
             </div>
-            <div className={styles.recommendation}>
+            <form>
+                <button onClick={updateClick}>変更します</button>
+            </form>
+            {/* <div className={styles.recommendation}>
                 { datas?.map((data,index) =>
                     <Link
                         to={`../myself/${data.id}`} 
@@ -60,7 +78,7 @@ function MyselfDetail() {
                         </div>
                     </Link>
                 ) }
-            </div>
+            </div> */}
         </div>
     )
 }

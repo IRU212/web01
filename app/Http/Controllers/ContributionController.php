@@ -15,7 +15,7 @@ class ContributionController extends Controller
 
         // $imgname = $request->file('image')->getClientOriginalName()
 
-        $reimg = $request->image;
+        $reimg = $request->image->name;
 
         $contribution = new Contribution();
         $contribution->title = $request->title;

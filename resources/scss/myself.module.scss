@@ -40,6 +40,7 @@
     position: relative;
     margin: 60px 0 0 0;
     padding: 0 15%;
+    display: flex;
 
     .myselfImg{
         width: 100%;
@@ -58,7 +59,6 @@
         margin: 0 0 50px 0;
         padding: 50px 10% 40px 10%;
         position: relative;
-        background-color: rgb(229, 237, 252);
 
         .title{
             position: relative;

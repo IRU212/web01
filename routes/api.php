@@ -4,6 +4,7 @@ use App\Http\Controllers\ContributionController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\IllustrationController;
 use App\Http\Controllers\MyselfController;
+use App\Http\Controllers\TestController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -25,6 +26,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // Route::get('/dashboard',[IllustrationController::class,'index']);
 Route::get('/home',[HomeController::class,'index']);
 
+Route::get('/test',[TestController::class,'store']);
+Route::post('/test',[TestController::class,'store']);
+
 
 // Route::get('/contribution',[IllustrationController::class,'index']);
 Route::get('/contribution',[ContributionController::class,'store']);
@@ -32,3 +36,7 @@ Route::post('/contribution',[ContributionController::class,'store']);
 
 Route::get('/myself',[MyselfController::class,'index']);
 Route::get('/myself/{id}',[MyselfController::class,'show']);
+Route::get('/myself/{id}/edit',[MyselfController::class,'edit']);
+Route::get('/myself/{id}/update',[MyselfController::class,'update']);
+Route::post('/myself/{id}/edit',[MyselfController::class,'edit']);
+Route::post('/myself/{id}/update',[MyselfController::class,'update']);

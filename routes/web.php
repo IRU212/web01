@@ -53,9 +53,8 @@ Route::get('/myself', function () {
 
 require __DIR__.'/auth.php';
 
-
-// Route::get('/', function () {
-//     return Inertia::render('Welcome',[
-//         'greeting' => 'Hello'
-//     ]);
-// });
+Route::get('/test', function () {
+    return Inertia::render('Test',[
+        'user' => Auth::user()
+    ]);
+})->middleware(['auth', 'verified'])->name('myself');

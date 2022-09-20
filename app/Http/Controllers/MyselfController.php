@@ -27,4 +27,14 @@ class MyselfController extends Controller
             ]
         );
     }
+
+    public function update(Request $request,$id){
+        $myself = Myself::find($id);
+        // $myself->title = $request->title;
+        // $myself->text = $request->text;
+        $myself->title = "変更しました";
+        $myself->text = "変更しました";
+        $myself->save();
+        return response()->json($myself);
+    }
 }
