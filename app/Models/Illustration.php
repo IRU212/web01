@@ -5,13 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Test extends Model
+class Illustration extends Model
 {
-    protected $table = 'tests';
+    protected $table = 'illustrations';
 
     protected $filable = [
         'id',
+        'title',
         'image',
-        'title'
+        'text',
+        'user_id'
     ];
 }

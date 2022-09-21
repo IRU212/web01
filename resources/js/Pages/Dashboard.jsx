@@ -1,5 +1,5 @@
-import Illsutration from '@/content/illsutration';
 import React from 'react';
+import Illsutration from './illsutration';
 import Header from './Header';
 
 export default function Dashboard(props) {

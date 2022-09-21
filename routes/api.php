@@ -26,13 +26,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // Route::get('/dashboard',[IllustrationController::class,'index']);
 Route::get('/home',[HomeController::class,'index']);
 
-Route::get('/test',[TestController::class,'store']);
 Route::post('/test',[TestController::class,'store']);
-
 
 // Route::get('/contribution',[IllustrationController::class,'index']);
 Route::get('/contribution',[ContributionController::class,'store']);
 Route::post('/contribution',[ContributionController::class,'store']);
+// Route::post('/contribution',[ContributionController::class,'store']);
 
 Route::get('/myself',[MyselfController::class,'index']);
 Route::get('/myself/{id}',[MyselfController::class,'show']);

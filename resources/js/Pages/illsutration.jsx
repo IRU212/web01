@@ -1,19 +1,19 @@
-import IllsutrationListDetail from '@/Pages/IllsutrationListDetail'
-import MyselfDetail from '@/Pages/MyselfDetail'
+import Search from '@/content/Search'
 import React, { useEffect, useState } from 'react'
 import { Link,BrowserRouter,Routes,Route } from 'react-router-dom'
 
 import styles from '../../scss/content.module.scss'
-import Search from './Search'
+import IllsutrationListDetail from './IllsutrationListDetail'
 
+// import Image from '../../../storage/app/public/image/naraka.jpg'
 
 function Illsutration() {
 
-    const [heart,setHeart] = useState(false)
+    // const [heart,setHeart] = useState(false)
 
-    const heartToggle = () => {
-        setHeart(!heart)
-    }
+    // const heartToggle = () => {
+    //     setHeart(!heart)
+    // }
 
     const [datas,setData] = useState()
 
@@ -37,7 +37,7 @@ function Illsutration() {
                     <Search />
                 </div>
                 <div className={styles.itemList}>
-                    { datas?.map((data) =>
+                    { datas?.map((data,key) =>
                         <Link
                             to={`../home/${data.id}`}
                             state={{
@@ -48,8 +48,9 @@ function Illsutration() {
                             }}
                             className={styles.item}
                         >
-                        <img src={ data.image } className={styles.itemImage} alt="image" />
-                        <div className={`${ heart ? styles.heart : styles.heartRed }`} onClick={heartToggle}></div>
+                        <div>{ data.image }</div>
+                        <img src={data.image} className={styles.itemImage} alt="image" />
+                        {/* <div className={`${ heart ? styles.heart : styles.heartRed }`} onClick={heartToggle}></div> */}
                         </Link>
                     )}
                 </div>

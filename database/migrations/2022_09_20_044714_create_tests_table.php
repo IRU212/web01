@@ -13,10 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tests', function (Blueprint $table) {
+        Schema::create('illustrations', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('image');
             $table->string('title');
+            $table->string('text');
+            $table->string('user_id');
             $table->timestamps();
         });
     }

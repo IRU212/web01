@@ -3,26 +3,27 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contribution;
+use App\Models\Illustration;
 use Illuminate\Http\Request;
 
 class ContributionController extends Controller
 {
     public function store(Request $request){
+        //storageに画像保存
+        $file_name = $request->image->getClientOriginalName();
+        $request->image->storeAs('public/image/',$file_name);
 
-        //画像保存処理
-        // $image = $request->file('image');
-        // $path = isset($image) ? $image->store('items', 'public') : '';
+        // $path = '"'.'../../../storage/app/public/image/'.$file_name.'"';
+        $path = 'storage/image/'.$file_name;
 
-        // $imgname = $request->file('image')->getClientOriginalName()
-
-        $reimg = $request->image->name;
-
-        $contribution = new Contribution();
-        $contribution->title = $request->title;
-        $contribution->text = $request->text;
-        $contribution->image = $reimg;
-        $contribution->user_id = $request->user_id;
-        $contribution->save();
-        return response()->json($contribution);
+        //dbに保存
+        $illustration = new Contribution();
+        $illustration->image = $path;
+        $illustration->title = $request->title;
+        $illustration->text = $request->text;
+        $illustration->user_id = $request->user_id;
+        $illustration->save();
+        
+        return response()->json($illustration);
     }
 }
