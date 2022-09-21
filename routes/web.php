@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TestController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -58,3 +59,5 @@ Route::get('/test', function () {
         'user' => Auth::user()
     ]);
 })->middleware(['auth', 'verified'])->name('myself');
+
+Route::post('/test/post',[TestController::class,'post']);

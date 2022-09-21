@@ -1,29 +1,30 @@
-import axios from 'axios';
+import axios from 'axios'
 import React, { useState } from 'react'
 
 function Test() {
 
-  const [title,setTitle] = useState();
-  const [image,setImage] = useState();
+    const [title,setTitle] = useState()
+    const [image,setImage] = useState()
 
-  const handleSubmit = () => {
+    const handleSubmit = () => {
 
-    const data = new FormData()
-    file.append("title",title);
-    file.append("image",image);
+        const data = new FormData()
+        data.append("title",title)
+        data.append("image",image)
 
-    axios.post("http://127.0.0.1:8000/api/test",data,{
-      headers: {
-        'content-type': 'multipart/form-data',
-      }
-    })
-    .then(response => {
-      console.log(response);
-    })
-    .catch((res) => {
-      console.log(res.data)
-    })
-  }
+        axios
+          .post("http://127.0.0.1:8000/api/test",data,{
+          headers: {
+            'content-type': 'multipart/form-data',
+          }
+        })
+        .then(response => {
+          console.log(response);
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+    }
 
   return (
       <div>
