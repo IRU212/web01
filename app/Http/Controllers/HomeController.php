@@ -15,4 +15,12 @@ class HomeController extends Controller
             200
         ]);
     }
+
+    public function show($id){
+        $contributions =  Contribution::find($id);
+        return response()->json([
+            'contributions' => $contributions,
+            200
+        ]);
+    }
 }

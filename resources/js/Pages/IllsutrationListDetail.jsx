@@ -19,10 +19,11 @@ function IllsutrationListDetail() {
 
     useEffect(() =>{
         axios
-            .get("http://127.0.0.1:8000/api/myself")
+            .get(`http://127.0.0.1:8000/api/home/${id}`)
             .then((res) => {
-                setData(res.data)
-                console.log(res.data)
+                setData(res.data.contributions)
+                console.log(res.data.contributions)
+                console.log(image)
             })
             .catch((res) => {
                 console.log(res.data)
@@ -33,7 +34,7 @@ function IllsutrationListDetail() {
         <div>
             <div className={styles.myselfDetail}>
                 <div className={styles.myselfImg}>
-                    <img src={ image } alt="" className={styles.Img} />
+                    <img src={`http://127.0.0.1:8000/${image}`} alt="" className={styles.Img} />
                 </div>
                 <div className={styles.introduce}>
                     <div className={styles.title}>
@@ -44,7 +45,7 @@ function IllsutrationListDetail() {
                     </div>
                 </div>
             </div>
-            <div className={styles.recommendation}>
+            {/* <div className={styles.recommendation}>
                 { datas?.map((data,index) =>
                     <Link
                         to={`../home/${data.id}`} 
@@ -60,7 +61,7 @@ function IllsutrationListDetail() {
                         </div>
                     </Link>
                 ) }
-            </div>
+            </div> */}
         </div>
     )
 }

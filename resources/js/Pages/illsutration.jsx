@@ -37,7 +37,7 @@ function Illsutration() {
                     <Search />
                 </div>
                 <div className={styles.itemList}>
-                    { datas?.map((data,key) =>
+                    { datas?.map((data,index) =>
                         <Link
                             to={`../home/${data.id}`}
                             state={{
@@ -47,9 +47,9 @@ function Illsutration() {
                                 image: `${data.image}`,
                             }}
                             className={styles.item}
+                            key={index}
                         >
-                        <div>{ data.image }</div>
-                        <img src={data.image} className={styles.itemImage} alt="image" />
+                        <img src={ data.image } className={styles.itemImage} alt="image" />
                         {/* <div className={`${ heart ? styles.heart : styles.heartRed }`} onClick={heartToggle}></div> */}
                         </Link>
                     )}
