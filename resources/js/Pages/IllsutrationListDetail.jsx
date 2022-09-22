@@ -5,7 +5,8 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Link,BrowserRouter,Routes,Route } from 'react-router-dom'
 
-import styles from '../../scss/myself.module.scss'
+import styles from '../../scss/content.module.scss'
+import IllustrationList from './IllustrationList';
 
 function IllsutrationListDetail() {
 
@@ -32,19 +33,16 @@ function IllsutrationListDetail() {
 
     return (
         <div>
-            <div className={styles.myselfDetail}>
-                <div className={styles.myselfImg}>
-                    <img src={`http://127.0.0.1:8000/${image}`} alt="" className={styles.Img} />
+            <div className={styles.IllsutrationListDetail}>
+                <div className={styles.IllsutrationImg}>
+                    <img src={`http://127.0.0.1:8000/${image}`} alt="image" className={styles.Img} />
                 </div>
-                <div className={styles.introduce}>
-                    <div className={styles.title}>
-                        { title }
-                    </div>
-                    <div className={styles.text}>
-                        { text }
-                    </div>
+                <div className={styles.detail}>
+                    <div className={styles.title}>{ title }</div>
+                    <div className={styles.text}>{ text }</div>
                 </div>
             </div>
+            <IllustrationList />
             {/* <div className={styles.recommendation}>
                 { datas?.map((data,index) =>
                     <Link

@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import Header from './Header'
 
 import Image from '../../../storage/app/public/image/sample.jpg'
@@ -10,12 +10,21 @@ function Contribution(props) {
     const [image,setImage] = useState()
     const [text,setText] = useState()
 
+    const userImg = useRef();
+
     const handleTitle = (e) => {
       setTitle(e.target.value)
     }
 
     const handleImage = (e) => {
       setImage(e.target.files[0])
+      const imagePreview = e.target.files[0]
+      userImg.current.title = imagePreview.name
+      const reader = new FileReader()
+      reader.onload = (event) => {
+        userImg.current.setAttribute('src',event.target.result)
+      }
+      reader.readAsDataURL(imagePreview)
     }
 
     const handleText = (e) => {
@@ -44,6 +53,8 @@ function Contribution(props) {
         })
     }
 
+    
+
   return (
       <div>
             <Header
@@ -61,6 +72,10 @@ function Contribution(props) {
             <input accept="image/*" multiple type="file" name='image' onChange={handleImage} />
             <button onClick={handleSubmit}>送信</button>
           </form>
+          <div>
+            <img ref={userImg} />
+            {/* <input type="file" onChange={onChange} /> */}
+          </div>
       </div>
   )
 }
