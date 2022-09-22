@@ -2,6 +2,8 @@ import axios from 'axios'
 import React, { useRef, useState } from 'react'
 import Header from './Header'
 
+import styles from '../../scss/content.module.scss'
+
 import Image from '../../../storage/app/public/image/sample.jpg'
 
 function Contribution(props) {
@@ -64,17 +66,25 @@ function Contribution(props) {
                     email: props.user.email
                 }} 
             />
-          <form>
-            <img src={Image} alt="" />
-            <p>ファイル送信</p>
-            <input type="text" name='tite' onChange={handleTitle} />
-            <input type="text" name='text' onChange={handleText} />
-            <input accept="image/*" multiple type="file" name='image' onChange={handleImage} />
-            <button onClick={handleSubmit}>送信</button>
-          </form>
-          <div>
-            <img ref={userImg} />
-            {/* <input type="file" onChange={onChange} /> */}
+          <div className={styles.contribution}>
+            <form className={styles.form}>
+              <div className={styles.flex}>
+                <div className={styles.labelBack}>
+                  <label className={styles.labelImage} htmlFor="avatar-image">
+                    <img src={'image/pic.jpg'} ref={userImg} className={styles.Img} alt="" />
+                  </label>
+                </div>
+                <div className={styles.inputText}>
+                  <input type="text" name='tite' placeholder='タイトル' onChange={handleTitle} className={styles.title} />
+                  <textarea type="text" name='text' placeholder='紹介文' onChange={handleText} className={styles.text} />
+                  <input accept="image/*" multiple type="file" name='image' className={styles.file} onChange={handleImage} id='avatar-image'/>
+                  <div className={styles.submitWarp}>
+                    <div className={styles.submitDetail}>利用規約やガイドラインに違反する作品は削除の対象となります。</div>
+                    <button onClick={handleSubmit} className={styles.button}>投稿</button>
+                  </div>
+                </div>
+              </div>
+            </form>
           </div>
       </div>
   )
