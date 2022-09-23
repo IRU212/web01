@@ -50,75 +50,7 @@ function Illsutration() {
                             key={index}
                         >
                             <img src={`http://127.0.0.1:8000/${data.image}`} className={styles.itemImage} alt="image" />
-                            <div className={`${ heart ? styles.heart : styles.heartRed }`} onClick={heartToggle}></div>
-                        </Link>
-                    </div>
-                    )}
-                    { datas?.map((data,index) =>
-                    <div className={styles.item}>
-                        <Link
-                            to={`../home/${data.id}`}
-                            state={{
-                                id: `${data.id}`,
-                                title: `${data.title}`,
-                                text: `${data.text}`,
-                                image: `${data.image}`,
-                            }}
-                            key={index}
-                        >
-                            <img src={`http://127.0.0.1:8000/${data.image}`} className={styles.itemImage} alt="image" />
-                            <div className={`${ heart ? styles.heart : styles.heartRed }`} onClick={heartToggle}></div>
-                        </Link>
-                    </div>
-                    )}
-                    { datas?.map((data,index) =>
-                    <div className={styles.item}>
-                        <Link
-                            to={`../home/${data.id}`}
-                            state={{
-                                id: `${data.id}`,
-                                title: `${data.title}`,
-                                text: `${data.text}`,
-                                image: `${data.image}`,
-                            }}
-                            key={index}
-                        >
-                            <img src={`http://127.0.0.1:8000/${data.image}`} className={styles.itemImage} alt="image" />
-                            <div className={`${ heart ? styles.heart : styles.heartRed }`} onClick={heartToggle}></div>
-                        </Link>
-                    </div>
-                    )}
-                    { datas?.map((data,index) =>
-                    <div className={styles.item}>
-                        <Link
-                            to={`../home/${data.id}`}
-                            state={{
-                                id: `${data.id}`,
-                                title: `${data.title}`,
-                                text: `${data.text}`,
-                                image: `${data.image}`,
-                            }}
-                            key={index}
-                        >
-                            <img src={`http://127.0.0.1:8000/${data.image}`} className={styles.itemImage} alt="image" />
-                            <div className={`${ heart ? styles.heart : styles.heartRed }`} onClick={heartToggle}></div>
-                        </Link>
-                    </div>
-                    )}
-                    { datas?.map((data,index) =>
-                    <div className={styles.item}>
-                        <Link
-                            to={`../home/${data.id}`}
-                            state={{
-                                id: `${data.id}`,
-                                title: `${data.title}`,
-                                text: `${data.text}`,
-                                image: `${data.image}`,
-                            }}
-                            key={index}
-                        >
-                            <img src={`http://127.0.0.1:8000/${data.image}`} className={styles.itemImage} alt="image" />
-                            <div className={`${ heart ? styles.heart : styles.heartRed }`} onClick={heartToggle}></div>
+                            {/* <div className={`${ heart ? styles.heart : styles.heartRed }`} onClick={heartToggle}></div> */}
                         </Link>
                     </div>
                     )}
