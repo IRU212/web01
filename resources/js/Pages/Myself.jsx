@@ -32,24 +32,20 @@ function Myself(props) {
 
     function MyselfIndex(){
         return(
-            <div className={styles.flex}>
-                { results?.map((data,index) =>
-                    <div key={index} className={styles.item}>
-                        <Link 
-                            to={`${data.id}`} 
-                            state={{
-                                id: `${data.id}`,
-                                title: `${data.title}`,
-                                text: `${data.text}`,
-                                image: `${data.image}`,
-                            }}
-                        >
-                            <div className={styles.imgback}>
-                                <img src={ data.image } className={styles.img} alt={ data.title } />
-                            </div>
-                            <div className={styles.title}>{ data.title }</div>
-                        </Link>
-                    </div>
+            <div className={styles.myselfIndex}>
+                { results?.map((data) =>
+                    <Link 
+                        to={`${data.id}`} 
+                        state={{
+                            id: `${data.id}`,
+                            title: `${data.title}`,
+                            text: `${data.text}`,
+                            image: `${data.image}`,
+                        }}
+                        className={styles.item}
+                    >
+                        <img src={`http://127.0.0.1:8000/${data.image}`} className={styles.Img} alt={ data.title } />
+                    </Link>
                 ) }
             </div>
         )

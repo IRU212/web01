@@ -15,6 +15,9 @@ function MyselfDetail() {
     const { text } = location.state
     const { image } = location.state
 
+    const [putTitle,setPutTitle] = useState(title)
+    const [putText,setPutText] = useState(text)
+
     const [datas,setData] = useState()
 
     useEffect(() =>{
@@ -29,56 +32,67 @@ function MyselfDetail() {
             })
     },[])
 
+    console.log(`api/myself/${id}/update`)
+
     const updateClick = () => {
-        console.log("クリックされました")
+
         axios
             .post(`api/myself/${id}/update`,{
-                title: "put",
-                text: "putTest"
+                title: putTitle,
+                text: putText
             })
             .then((res) => {
                 setData(res.data)
             })
-            .catch((res) => {
-                console.log(res.data)
+            .catch((error) => {
+                console.log(error)
             })
+    }
+
+    const deleteClick = (id) => {
+
+        axios
+            .post(`api/myself/${id}/delete`,{
+                id: id
+            })
+            .then((res) => {
+                setData(res.data)
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+    }
+
+    const hadnleTitleChange = (e) => {
+        setPutTitle(e.target.value)
+    }
+
+    const hadnleTextChange = (e) => {
+        setPutText(e.target.value)
     }
 
     return (
         <div>
             <div className={styles.myselfDetail}>
                 <div className={styles.myselfImg}>
-                    <img src={ image } alt="" className={styles.Img} />
+                    <img src={`http://127.0.0.1:8000/${image}`} alt="image" className={styles.Img} />
                 </div>
                 <div className={styles.introduce}>
-                    <div className={styles.title}>
-                        { title }
+                    <div>
+                        <input type="text" onChange={hadnleTitleChange} value={ putTitle } className={styles.title}  />
                     </div>
-                    <div className={styles.text}>
-                        { text }
+                    <div>
+                        <input type="text" onChange={hadnleTextChange} value={ putText } className={styles.text} />
                     </div>
+                    <form className={styles.formPutButton}>
+                        <button onClick={updateClick}>変更</button>
+                    </form>
+                    <form>
+                        {/* <button onClick={deleteClick} className={styles.formDeleteButton}>削除</button> */}
+                        <a href={`../myself/${id}/delete`} className={styles.formDeleteButton}>delete</a>
+                    </form>
                 </div>
             </div>
-            <form>
-                <button onClick={updateClick}>変更します</button>
-            </form>
-            {/* <div className={styles.recommendation}>
-                { datas?.map((data,index) =>
-                    <Link
-                        to={`../myself/${data.id}`} 
-                        state={{
-                            id: `${data.id}`,
-                            title: `${data.title}`,
-                            text: `${data.text}`,
-                            image: `${data.image}`,
-                        }}
-                    >
-                        <div key={index} className={styles.item}>
-                            <img src={ data.image } alt="aaa" className={styles.image} />
-                        </div>
-                    </Link>
-                ) }
-            </div> */}
         </div>
     )
 }

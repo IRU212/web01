@@ -43,23 +43,6 @@ function IllsutrationListDetail() {
                 </div>
             </div>
             <IllustrationList />
-            {/* <div className={styles.recommendation}>
-                { datas?.map((data,index) =>
-                    <Link
-                        to={`../home/${data.id}`} 
-                        state={{
-                            id: `${data.id}`,
-                            title: `${data.title}`,
-                            text: `${data.text}`,
-                            image: `${data.image}`,
-                        }}
-                    >
-                        <div key={index} className={styles.item}>
-                            <img src={ data.image } alt="aaa" className={styles.image} />
-                        </div>
-                    </Link>
-                ) }
-            </div> */}
         </div>
     )
 }

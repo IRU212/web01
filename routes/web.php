@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MyselfController;
 use App\Http\Controllers\TestController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -58,6 +59,7 @@ Route::get('/test', function () {
     return Inertia::render('Test',[
         'user' => Auth::user()
     ]);
-})->middleware(['auth', 'verified'])->name('myself');
+})->middleware(['auth', 'verified']);
 
-Route::post('/test/post',[TestController::class,'post']);
+Route::get('/myself/{id}/delete',[MyselfController::class,'delete']);
+Route::post('/myself/{id}/delete',[MyselfController::class,'delete']);

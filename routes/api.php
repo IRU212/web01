@@ -40,3 +40,4 @@ Route::get('/myself/{id}/edit',[MyselfController::class,'edit']);
 Route::get('/myself/{id}/update',[MyselfController::class,'update']);
 Route::post('/myself/{id}/edit',[MyselfController::class,'edit']);
 Route::post('/myself/{id}/update',[MyselfController::class,'update']);
+// Route::post('/myself/{id}/delete',[MyselfController::class,'delete']);
