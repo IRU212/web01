@@ -33,9 +33,9 @@ function Illsutration() {
 
         return(
             <div>
-                {/* <div>
+                <div>
                     <Search />
-                </div> */}
+                </div>
                 <div className={styles.itemList}>
                     { datas?.map((data,index) =>
                     <div className={styles.item}>

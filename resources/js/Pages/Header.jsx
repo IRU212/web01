@@ -31,17 +31,15 @@ function Header(props) {
 
     return (
         <div className={styles.header}>
-            <a href="home" className={styles.home}>home</a>
-            {/* <div className={styles.search}><Search /></div> */}
+            <a href="http://127.0.0.1:8000/home" className={styles.home}>home</a>
             <div className={styles.iconback}>
-                {/* <Image src={Icon} width={40} height={40} alt="icon" onClick={iconMenuToggle} className={styles.icon} /> */}
                 <img  onClick={iconMenuToggle} className={styles.icon}  src="https://pbs.twimg.com/media/EsU0QSaVEAEQSsC.png" alt="" />
                 <div className={`${ iconMenu ? styles.iconToggle : styles.iconToggleNone }`}>
                     <div className={styles.toggleHeader}>
                         <div className={styles.toggleHeaderName}>{ props.info.name }</div>
                         <div className={styles.toggleHeaderName}>{ props.info.email }</div>
                         <div className={styles.toggleHeaderName}>
-                            <a href="contribution">
+                            <a href="http://127.0.0.1:8000/contribution">
                                 投稿
                             </a>
                         </div>
@@ -50,7 +48,6 @@ function Header(props) {
                                 自分の作品
                             </a>
                         </div>
-                        {/* <div className={styles.toggleHeaderName}><a href="">いいね</a></div> */}
                         <div className={styles.toggleHeaderName}>                
                             <Link
                                 href={route('logout')}

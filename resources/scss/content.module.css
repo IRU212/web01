@@ -1,0 +1,354 @@
+@charset "UTF-8";
+.Illsutration {
+  width: 100%;
+  margin: 60px 0 100px 0;
+}
+
+.Illsutration .itemList {
+  margin: 50px 0 0 0;
+  padding: 0 6%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  text-align: left;
+}
+
+.Illsutration .itemList .item {
+  width: 210px;
+  height: 210px;
+  background-color: antiquewhite;
+  margin: 30px 0 0 4%;
+  border-radius: 15px;
+  position: relative;
+}
+
+.Illsutration .itemList .item:hover {
+  cursor: pointer;
+}
+
+.Illsutration .itemList .item .itemImage {
+  width: 100%;
+  height: 100%;
+  margin: 0 0 0 0;
+  border-radius: 15px;
+  border: 2.5px solid #ccc;
+  vertical-align: bottom;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.Illsutration .itemList .item .heart {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  bottom: 10px;
+  right: 12px;
+}
+
+.Illsutration .itemList .item .heart::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  /* x位置 */
+  top: 0;
+  /* y位置 */
+  width: 20px;
+  /* 幅 */
+  height: 35px;
+  /* 高さ */
+  background: #fff;
+  /* 色 */
+  border-radius: 35px 20px 0 0;
+  /* 丸み */
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  /* 角度調整 */
+  -webkit-transform-origin: 0 100%;
+          transform-origin: 0 100%;
+  /* 回転の基準点 */
+}
+
+.Illsutration .itemList .item .heart::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  /* x位置 */
+  top: 0;
+  /* y位置 */
+  width: 20px;
+  /* 幅 */
+  height: 35px;
+  /* 高さ */
+  background: #fff;
+  /* 色 */
+  border-radius: 20px 35px 0 0;
+  /* 丸み */
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  /* 角度調整 */
+  -webkit-transform-origin: 100% 100%;
+          transform-origin: 100% 100%;
+  /* 回転の基準点 */
+}
+
+.Illsutration .itemList .item .heartRed {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  bottom: 10px;
+  right: 12px;
+}
+
+.Illsutration .itemList .item .heartRed::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  /* x位置 */
+  top: 0;
+  /* y位置 */
+  width: 20px;
+  /* 幅 */
+  height: 35px;
+  /* 高さ */
+  background: #FF5252;
+  /* 色 */
+  border-radius: 35px 20px 0 0;
+  /* 丸み */
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  /* 角度調整 */
+  -webkit-transform-origin: 0 100%;
+          transform-origin: 0 100%;
+  /* 回転の基準点 */
+}
+
+.Illsutration .itemList .item .heartRed::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  /* x位置 */
+  top: 0;
+  /* y位置 */
+  width: 20px;
+  /* 幅 */
+  height: 35px;
+  /* 高さ */
+  background: #FF5252;
+  /* 色 */
+  border-radius: 20px 35px 0 0;
+  /* 丸み */
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  /* 角度調整 */
+  -webkit-transform-origin: 100% 100%;
+          transform-origin: 100% 100%;
+  /* 回転の基準点 */
+}
+
+.IllustrationList {
+  width: auto;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 60px 0 0 0;
+  padding: 0 7%;
+}
+
+.IllustrationList .itemListCover {
+  width: 190px;
+  height: 190px;
+  margin: 40px 0 0 4.5%;
+  border-radius: 10px;
+  background-color: antiquewhite;
+  border: 1.8px solid #ccc;
+}
+
+.IllustrationList .itemListCover:hover {
+  cursor: pointer;
+}
+
+.IllustrationList .itemListCover .ImgSize {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.IllsutrationListDetail {
+  width: auto;
+  height: 100%;
+  margin: 50px 0 0 0;
+  padding: 0 10% 0 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.IllsutrationListDetail .IllsutrationImg {
+  width: 900px;
+  max-height: 700px;
+  border-radius: 20px;
+  background-color: #f0ece7;
+}
+
+.IllsutrationListDetail .IllsutrationImg .Img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+  border-radius: 20px;
+}
+
+.IllsutrationListDetail .detail {
+  width: auto;
+  margin: 0 auto;
+  padding: 0 60px 0 0px;
+  height: 100%;
+}
+
+.IllsutrationListDetail .detail .title {
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 6px;
+}
+
+.IllsutrationListDetail .detail .text {
+  margin: 36px 0 0 0;
+  font-size: 1.1rem;
+}
+
+.contribution {
+  width: auto;
+  height: 100%;
+  margin: 90px 0 100px 0;
+  padding: 0 12%;
+}
+
+.contribution .form {
+  width: 100%;
+  height: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.contribution .form .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.contribution .form .file {
+  display: none;
+}
+
+.contribution .form .labelBack {
+  width: 580px;
+  height: 600px;
+  padding: 10px 0;
+  border: 2px solid #3d3c3c;
+  background-color: #3d3c3c;
+}
+
+.contribution .form .labelBack .labelImage {
+  width: 600px;
+  height: 600px;
+}
+
+.contribution .form .labelBack .labelImage .Img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+}
+
+.contribution .form .labelBack .labelImage:hover {
+  cursor: pointer;
+}
+
+.contribution .form .inputText {
+  width: 450px;
+  height: 100%;
+  margin: 10px 0 0 8%;
+  border-radius: 10px;
+}
+
+.contribution .form .title {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  width: 100%;
+  padding: 12px 10px;
+}
+
+.contribution .form .text {
+  width: 100%;
+  height: 200px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.contribution .form .submitWarp {
+  margin: 20px 0 0 0;
+  text-align: center;
+}
+
+.contribution .form .submitWarp .submitDetail {
+  margin: 40px 0 30px 0;
+}
+
+.contribution .form .submitWarp .button {
+  width: 120px;
+  padding: 7px 0px;
+  border-radius: 5px;
+  background-color: #949393;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.search {
+  position: relative;
+  width: 330px;
+  margin: 0 auto;
+}
+
+.inputSearch {
+  height: 35px;
+  width: 330px;
+  border-radius: 20px;
+  padding-left: 40px;
+  background-image: url("https://thumb.ac-illust.com/66/66c2ed76ee24b45362979ae12a79cfd0_t.jpeg");
+  background-size: 28px;
+  background-repeat: no-repeat;
+  background-position: left 3px top 3px;
+}
+
+.result {
+  left: 4%;
+  width: 306px;
+  display: block;
+  position: absolute;
+  top: 43px;
+  z-index: 999;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px 0 0 10px;
+}
+
+.resultNone {
+  display: none;
+}
+
+.resultFont {
+  margin: 10px 0;
+}
+/*# sourceMappingURL=content.module.css.map */

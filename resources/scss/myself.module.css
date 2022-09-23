@@ -1,0 +1,134 @@
+.myselfIndex {
+  width: auto;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 60px 0 0 0;
+  padding: 0 7%;
+}
+
+.myselfIndex .item {
+  width: 190px;
+  height: 190px;
+  margin: 40px 0 0 4.5%;
+  border-radius: 10px;
+  background-color: antiquewhite;
+  border: 1.8px solid #ccc;
+}
+
+.myselfIndex .item:hover {
+  cursor: pointer;
+}
+
+.myselfIndex .item .Img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.myselfDetail {
+  width: auto;
+  position: relative;
+  margin: 80px 0 0 0;
+  padding: 0 15%;
+}
+
+.myselfDetail .myselfImg {
+  width: 100%;
+  height: 800px;
+  background-color: #c2a7a7;
+}
+
+.myselfDetail .myselfImg .Img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+}
+
+.myselfDetail .introduce {
+  width: 100%;
+  height: 100%;
+  margin: 0 0 50px 0;
+  padding: 50px 10% 90px 10%;
+  position: relative;
+  border-bottom: 2px solid #ccc;
+  border-left: 2px solid #ccc;
+  border-right: 2px solid #ccc;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.myselfDetail .introduce .title {
+  width: auto;
+}
+
+.myselfDetail .introduce .text {
+  width: auto;
+  margin-top: 40px;
+}
+
+.myselfDetail .introduce .title, .myselfDetail .introduce .text {
+  border: none;
+  border-bottom: 1.3px solid #ccc;
+}
+
+.myselfDetail .introduce .title:hover, .myselfDetail .introduce .text:hover {
+  cursor: pointer;
+}
+
+.myselfDetail .introduce .formPutButton {
+  position: absolute;
+  right: 5%;
+  bottom: 20px;
+  padding: 6px 9px;
+  font-size: 0.9rem;
+  background-color: #fffcfc;
+  border: #787878 solid 1px;
+  border-radius: 6px;
+}
+
+.myselfDetail .introduce .formDeleteButton {
+  position: absolute;
+  right: 12%;
+  bottom: 20px;
+  padding: 6px 9px;
+  font-size: 0.9rem;
+  background-color: #fffcfc;
+  border: #787878 solid 1px;
+  border-radius: 6px;
+}
+
+.recommendation {
+  width: 100%;
+  margin: 70px 0 60px 0;
+  padding: 0 9%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  text-align: center;
+}
+
+.recommendation .item {
+  width: 170px;
+  height: 170px;
+  border-radius: 20px;
+  margin: 30px 18px 0 18px;
+  padding: 0;
+}
+
+.recommendation .item .image {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+/*# sourceMappingURL=myself.module.css.map */

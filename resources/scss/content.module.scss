@@ -264,7 +264,7 @@ $input-radius: 10px;
 .search{
     position: relative;
     width: 330px;
-    margin: 0 0 0 8%;
+    margin: 0 auto;
 }
 
 .inputSearch{
@@ -287,7 +287,7 @@ $input-radius: 10px;
     z-index: 999;
     background-color: #fff;
     border-radius: 10px;
-    padding: 20px 0;
+    padding: 20px 0 0 10px;
 }
 
 .resultNone{
