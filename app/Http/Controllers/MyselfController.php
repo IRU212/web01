@@ -36,7 +36,7 @@ class MyselfController extends Controller
         return response()->json($myself);
     }
 
-    public function delete(Request $request,$id){
+    public function delete($id){
         $myself = Myself::find($id);
         $myself->delete();
         return redirect()->route('myself');

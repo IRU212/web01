@@ -37,23 +37,9 @@ function MyselfDetail() {
     const updateClick = () => {
 
         axios
-            .post(`api/myself/${id}/update`,{
+            .post(`http://127.0.0.1:8000/api/myself/${id}/update`,{
                 title: putTitle,
                 text: putText
-            })
-            .then((res) => {
-                setData(res.data)
-            })
-            .catch((error) => {
-                console.log(error)
-            })
-    }
-
-    const deleteClick = (id) => {
-
-        axios
-            .post(`api/myself/${id}/delete`,{
-                id: id
             })
             .then((res) => {
                 setData(res.data)
@@ -88,8 +74,7 @@ function MyselfDetail() {
                         <button onClick={updateClick}>変更</button>
                     </form>
                     <form>
-                        {/* <button onClick={deleteClick} className={styles.formDeleteButton}>削除</button> */}
-                        <a href={`../myself/${id}/delete`} className={styles.formDeleteButton}>delete</a>
+                        <a href={`../myself/${id}/delete`} className={styles.formDeleteButton}>削除</a>
                     </form>
                 </div>
             </div>
