@@ -1,6 +1,6 @@
 import Search from '@/content/Search'
 import React, { useEffect, useState } from 'react'
-import { Link,BrowserRouter,Routes,Route } from 'react-router-dom'
+import { Link,BrowserRouter,Routes,Route, HashRouter } from 'react-router-dom'
 
 import styles from '../../scss/content.module.scss'
 import IllsutrationListDetail from './IllsutrationListDetail'
@@ -61,12 +61,12 @@ function Illsutration() {
 
     return (
         <div className={styles.Illsutration}>
-            <BrowserRouter>
+            <HashRouter>
                 <Routes>
-                    <Route path='home' element={<IllsutrationList />} />
+                    <Route path='/' element={<IllsutrationList />} />
                     <Route path='home/:id' element={<IllsutrationListDetail />} />
                 </Routes>
-            </BrowserRouter>
+            </HashRouter>
         </div>
     )
 }
