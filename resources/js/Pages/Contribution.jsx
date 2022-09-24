@@ -53,6 +53,8 @@ function Contribution(props) {
         .catch((err) => {
           console.log(err)
         })
+
+        window.location.href = 'home'
     }
 
     
@@ -80,7 +82,9 @@ function Contribution(props) {
                   <input accept="image/*" multiple type="file" name='image' className={styles.file} onChange={handleImage} id='avatar-image'/>
                   <div className={styles.submitWarp}>
                     <div className={styles.submitDetail}>利用規約やガイドラインに違反する作品は削除の対象となります。</div>
-                    <button onClick={handleSubmit} className={styles.button}>投稿</button>
+                    <button onClick={handleSubmit} className={styles.button}>
+                      投稿
+                    </button>
                   </div>
                 </div>
               </div>

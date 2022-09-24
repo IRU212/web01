@@ -5,7 +5,7 @@ import { useState } from 'react'
 import Header from './Header'
 
 import styles from '../../scss/myself.module.scss'
-import { Link,BrowserRouter,Routes,Route } from 'react-router-dom'
+import { Link,BrowserRouter,Routes,Route, HashRouter } from 'react-router-dom'
 import MyselfDetail from './MyselfDetail'
 
 function Myself(props) {

@@ -32,8 +32,6 @@ function MyselfDetail() {
             })
     },[])
 
-    console.log(`api/myself/${id}/update`)
-
     const updateClick = () => {
 
         axios
@@ -43,6 +41,7 @@ function MyselfDetail() {
             })
             .then((res) => {
                 setData(res.data)
+                window.location.href = '../myself'
             })
             .catch((error) => {
                 console.log(error)
