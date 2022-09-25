@@ -1,0 +1,27 @@
+.home{
+    width: auto;
+    margin: 110px 0 0 0;
+    padding: 0 30%;
+
+
+    .cover{
+        width: 100%;
+        text-align: center;
+
+        .mainFont{
+            font-size: 1.3rem;
+            text-align: left;
+            padding: 0 25px 10px 25px;
+            border-bottom: 1.4px solid #000;
+            width: fit-content;
+            letter-spacing: 3.6px;
+        }
+    
+        .introduce{
+            margin: 30px 0 80px 0;
+            line-height: 1.9rem;
+            text-align: left;
+            padding: 0 20px 10px 10px;
+        }
+    }
+}
