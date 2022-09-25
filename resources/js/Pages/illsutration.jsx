@@ -3,11 +3,12 @@ import React, { useEffect, useState } from 'react'
 import { Link,BrowserRouter,Routes,Route, HashRouter } from 'react-router-dom'
 
 import styles from '../../scss/content.module.scss'
+import Header from './Header'
 import IllsutrationListDetail from './IllsutrationListDetail'
 
 // import Image from '../../../storage/app/public/image/naraka.jpg'
 
-function Illsutration() {
+function Illsutration(props) {
 
     const [heart,setHeart] = useState(false)
 
@@ -60,13 +61,22 @@ function Illsutration() {
     }
 
     return (
-        <div className={styles.Illsutration}>
-            <HashRouter>
-                <Routes>
-                    <Route path='/' element={<IllsutrationList />} />
-                    <Route path='home/:id' element={<IllsutrationListDetail />} />
-                </Routes>
-            </HashRouter>
+        <div>
+            <Header 
+                info={{ 
+                    id: props.user.id,
+                    name: props.user.name,
+                    email: props.user.email
+                }} 
+            />
+            <div className={styles.Illsutration}>
+                <HashRouter>
+                    <Routes>
+                        <Route path='/' element={<IllsutrationList />} />
+                        <Route path='home/:id' element={<IllsutrationListDetail />} />
+                    </Routes>
+                </HashRouter>
+            </div>
         </div>
     )
 }

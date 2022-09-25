@@ -31,7 +31,11 @@ function Header(props) {
 
     return (
         <div className={styles.header}>
-            <a href="http://127.0.0.1:8000/home" className={styles.home}>home</a>
+            <div className={styles.headerList}>
+                <a href="http://127.0.0.1:8000/home" className={styles.fontLink}>home</a>
+                <a href="http://127.0.0.1:8000/illsutration" className={styles.fontLink}>illsutration</a>
+                <a href="http://127.0.0.1:8000/chat" className={styles.fontLink}>chat</a>
+            </div>
             <div className={styles.iconback}>
                 <img  onClick={iconMenuToggle} className={styles.icon}  src="https://pbs.twimg.com/media/EsU0QSaVEAEQSsC.png" alt="" />
                 <div className={`${ iconMenu ? styles.iconToggle : styles.iconToggleNone }`}>

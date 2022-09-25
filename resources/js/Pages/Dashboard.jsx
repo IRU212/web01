@@ -2,6 +2,7 @@ import React from 'react';
 import Illsutration from './illsutration';
 import Header from './Header';
 import Chat from './Chat';
+import Home from './Home';
 
 export default function Dashboard(props) {
 
@@ -14,7 +15,7 @@ export default function Dashboard(props) {
                     email: props.user.email
                 }} 
             />
-            <Illsutration />
+            <Home />
         </div>
     );
 }

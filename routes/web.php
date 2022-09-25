@@ -35,6 +35,12 @@ Route::get('/home', function () {
     ]);
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/illsutration', function () {
+    return Inertia::render('illsutration',[
+        'user' => Auth::user()
+    ]);
+})->middleware(['auth', 'verified'])->name('dashboard');
+
 Route::get('/chat', function () {
     return Inertia::render('Chat',[
         'user' => Auth::user()
