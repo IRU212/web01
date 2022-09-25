@@ -9,7 +9,7 @@ class ChatController extends Controller
 {
     public function index()
     {
-        $chat = Chat::all();
+        $chat = Chat::latest()->get();
         return response()->json($chat,200);
     }
 

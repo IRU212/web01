@@ -4,7 +4,12 @@ import { useState } from 'react';
 import { useEffect } from 'react'
 import Header from './Header';
 
+import styles from '../../scss/chat.module.scss'
+
 function Chat(props) {
+
+    // ログイン中のアカウントID
+    const userId = props.user.id
 
     const [datas,setData] = useState()
     const [text,setText] = useState()
@@ -26,7 +31,7 @@ function Chat(props) {
 
     const ClickPost = () => {
         axios
-            .post("http://127.0.0.1:8000/api/chat/store/16",{
+            .post(`http://127.0.0.1:8000/api/chat/store/${userId}`,{
                 text: text
             })
             .then((res) => {
@@ -46,17 +51,35 @@ function Chat(props) {
                     email: props.user.email
                 }} 
             />
-            <div>
+            <div className={styles.PostChat}>
                 <form>
-                    <input type="text" value={text} onChange={handleChangeText} />
-                    <button onClick={ClickPost}>投稿</button>
+                    <input type="text" value={text} onChange={handleChangeText} className={styles.InputText} />
+                    <button onClick={ClickPost} className={styles.Button}>＋</button>
                 </form>
             </div>
-            <div>
+            <div className={styles.chat}>
                 { datas?.map((data) => 
-                    <div>
-                        { data.text }
-                    </div>
+                    {
+                        return (
+                            <div>
+                                { data.user_id === userId ? 
+                                    <div className={styles.chatListTrue}>
+                                        <div className={styles.chatItemTrue}>
+                                            { data.text }
+                                        </div> 
+                                    </div>
+                                    : 
+                                    <div className={styles.right}>
+                                        <div className={styles.chatListFalse}>
+                                            <div className={styles.chatItemFalse}>
+                                                { data.text }
+                                            </div> 
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        )
+                    }
                 ) }
             </div>
         </div>
