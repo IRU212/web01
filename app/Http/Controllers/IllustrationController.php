@@ -10,15 +10,6 @@ use Inertia\Inertia;
 class IllustrationController extends Controller
 {
     public function index(){
-
-        // $loginId = Auth::id();
-        // $loginUser = Auth::user();
-
-        // return response()->json([
-        //     'loginId' => $loginId,
-        //     'loginUser' => $loginUser
-        // ]);
-
         return Inertia::render('User/Index',[
             'users' => User::all()
         ]);

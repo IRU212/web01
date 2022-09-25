@@ -6,6 +6,7 @@ import { useLocation } from 'react-router-dom';
 import { Link,BrowserRouter,Routes,Route } from 'react-router-dom'
 
 import styles from '../../scss/content.module.scss'
+import Chat from './Chat';
 import IllustrationList from './IllustrationList';
 
 function IllsutrationListDetail() {

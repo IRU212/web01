@@ -1,6 +1,7 @@
 import React from 'react';
 import Illsutration from './illsutration';
 import Header from './Header';
+import Chat from './Chat';
 
 export default function Dashboard(props) {
 

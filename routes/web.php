@@ -35,6 +35,13 @@ Route::get('/home', function () {
     ]);
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/chat', function () {
+    return Inertia::render('Chat',[
+        'user' => Auth::user()
+    ]);
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+
 Route::get('/contribution', function () {
     return Inertia::render('Contribution',[
         'user' => Auth::user()
@@ -46,12 +53,6 @@ Route::get('/myself', function () {
         'user' => Auth::user()
     ]);
 })->middleware(['auth', 'verified'])->name('myself');
-
-// Route::get('/myself/{id}', function () {
-//     return Inertia::render('MyselfDetail',[
-//         'user' => Auth::user()
-//     ]);
-// })->middleware(['auth', 'verified']);
 
 require __DIR__.'/auth.php';
 

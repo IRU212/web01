@@ -5,13 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Like extends Model
+class Chat extends Model
 {
-    protected $table = 'likes';
+    protected $table = 'chats';
 
     protected $filable = [
         'id',
-        'user_id',
-        'contributions_id'
+        'text',
+        'contribution_id',
+        'user_id'
     ];
 }
